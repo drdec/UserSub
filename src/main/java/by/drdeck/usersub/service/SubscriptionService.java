@@ -21,7 +21,7 @@ public class SubscriptionService {
 
     public Subscription addSubscription(Long userId, SubscriptionDto subscriptionDto) {
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new RuntimeException("Пользователь не найден"));
 
         Subscription subscription = subscriptionMapper.toEntity(subscriptionDto);
         subscription.setUser(user);
